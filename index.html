@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Qozoqov O'tkir Yo'ldoshovich — Aloqa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <style>
+    :root{--bg:#f7f7fb;--card:#ffffff;--muted:#6b7280;--accent:#2563eb}
+    *{box-sizing:border-box}
+    
+    /* GLOBAL FONI: To'q ko'k va oq gradyent */
+    body{
+        font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+        margin:0; 
+        min-height: 100vh;
+        background: linear-gradient(to bottom, #0e1837 0%, #ffffff 100%); 
+        color:#111
+    }
+    .wrap{max-width:520px;margin:40px auto;padding:24px}
+    
+    /* YALTROQ ANIMATSIYA UCHUN KEYFRAMES */
+    @keyframes color-shift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* CARD UCHUN YANGILANGAN CSS: Oqlik to'liq olib tashlandi */
+    .card{
+        border-radius:16px;
+        padding:28px;
+        box-shadow:0 6px 20px rgba(15,23,42,.4); /* Soya qalinroq */
+        
+        /* Rangli gradyent fon (to'liq cardni qoplaydi) */
+        background: linear-gradient(120deg, #FF69B4, #4CAF50, #007bff, #FF69B4); /* Pushti, Yashil, Ko'k ranglar */
+        background-size: 300% 300%; 
+        animation: color-shift 15s ease infinite; /* 15 soniyalik animatsiya */
+        
+        color: #fff; /* Matnni oq rangda qilish */
+        position: relative;
+    }
+    
+    /* MATNNI MARKAZGA QAYTARISH QOIDASI */
+    .card h1 {
+        font-size:20px;
+        text-align:center; /* Markazga qaytarish */
+        margin:6px 0;
+        color: #ffffff; 
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    }
+    .card p.role {
+        margin:0;
+        text-align:center; /* Markazga qaytarish */
+        color: rgba(255, 255, 255, 0.8); 
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    }
+    /* Qolgan matnlar uchun (footer, muted) */
+    .card .muted, .card footer { 
+        color: rgba(255, 255, 255, 0.8); 
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    }
+
+    /* Rasm, linklar va boshqa qoidalar avvalgidek qoldi */
+    .photo{
+        width:140px;height:140px;border-radius:999px;object-fit:cover;display:block;margin:0 auto 14px;
+        padding: 4px;
+        background: rgba(255, 255, 255, 0.2); 
+        border: 4px solid #ffffff; 
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.6); 
+    }
+    
+    /* Linklar Endi Rangli Fondan Ajralib Turishi kerak */
+    .links{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+
+    a.btn{
+        display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;text-decoration:none;
+        background: rgba(255, 255, 255, 0.1); 
+        border: 1px solid rgba(255, 255, 255, 0.3); 
+        color: #ffffff; 
+        transition: background 0.3s;
+    }
+    a.btn:hover {
+        background: rgba(255, 255, 255, 0.2); 
+    }
+    
+    a.btn span{flex:1;font-weight:600; color: #ffffff;} 
+    
+    /* Nusxalash tugmasi (copy) */
+    .btn.copy {
+        background: rgba(0, 0, 0, 0.2); 
+        border: 1px dashed rgba(255, 255, 255, 0.5) !important;
+        color: #ffffff;
+    }
+
+    .muted{font-size:13px;color:var(--muted);text-align:center;margin-top:14px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .small{font-size:13px}
+    
+    /* Nusxalash matnini yorqin ko'k qilish */
+    .copy .small {
+        color: #87cefa; 
+        font-weight: 600; 
+    }
+    
+    /* ICON SOYALARI */
+    .fa-solid, .fa-brands {
+        filter: drop-shadow(0 0 5px currentColor); 
+    }
+    .icon-ig{
+        filter: drop-shadow(0 0 5px #f09433);
+    }
+    /* Ikonka Ranglari (oldingi kodingizdagi kabi) */
+    .icon-phone{color:#34c759;} 
+    .icon-tg{color:#0088cc;} 
+    .icon-ig{
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .icon-mail{color:#4a90e2;} 
+    
+    .copy{cursor:pointer}
+    footer{font-size:12px;color:rgba(255, 255, 255, 0.6);text-align:center;margin-top:18px}
+    
+    @media (max-width:480px){.wrap{margin:16px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <img class="photo" id="profilePhoto" src="111111111.jpg" alt="Qozoqov O'tkir">
+      <h1 id="fullName">Qozoqov O'tkir Yo'ldoshovich</h1>
+      <p class="role" id="role">Jizzax davlat pedagogika universiteti — Yoshlar akademiyasi lideri</p>
+
+      <div class="links">
+        <a class="btn" href="tel:+998940665455" id="phoneLink">
+          <i class="fa-solid fa-phone icon-phone"></i>
+          <span>+998 94 066 54 55</span><small class="small"></small>
+        </a>
+        <a class="btn" href="https://t.me/utkir_qozoqov" target="_blank" id="tgLink">
+          <i class="fa-brands fa-telegram icon-tg"></i>
+          <span>@utkir_qozoqov</span><small class="small"></small>
+        </a>
+        <a class="btn" href="https://instagram.com/utkir_qozoqov" target="_blank" id="igLink">
+          <i class="fa-brands fa-instagram icon-ig"></i>
+          <span>@utkir_qozoqov</span><small class="small"></small>
+        </a>
+        <a class="btn" href="mailto:utkirqozoqov1101@gmail.com" id="emailLink">
+          <i class="fa-solid fa-envelope icon-mail"></i>
+          <span>utkirqozoqov1101@gmail.com</span><small class="small"></small>
+        </a>
+
+        <div class="btn copy" id="copyBtn" style="display:flex;align-items:center;gap:10px;padding:12px 14px;border-radius:10px;cursor:pointer">
+          <i class="fa-solid fa-copy"></i>
+          <span id="copyLabel"></span>
+          <small class="small">Nusxalash</small>
+        </div>
+      </div>
+
+      <p class="muted">Qo'shimcha ma'lumot uchun aloqaga chiqing.</p>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Qozoqov O'tkir. Sahifa — mini-bio.
+    </footer>
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  async function copyToClipboard(text){
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function'){
+      try{
+        await navigator.clipboard.writeText(text);
+        return true;
+      }catch(err){
+        console.warn('navigator.clipboard.writeText failed:', err);
+      }
+    }
+
+    try{
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, textarea.value.length);
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textarea);
+      return successful;
+    }catch(e){
+      console.warn('Fallback copy failed:', e);
+      return false;
+    }
+  }
+
+  document.getElementById('copyBtn').addEventListener('click', async function(){
+    const name = document.getElementById('fullName').textContent.trim();
+    const phone = (document.querySelector('#phoneLink span') || {textContent: ''}).textContent.trim();
+    const telegram = (document.querySelector('#tgLink span') || {textContent: ''}).textContent.trim();
+    const instagram = (document.querySelector('#igLink span') || {textContent: ''}).textContent.trim();
+    const email = (document.querySelector('#emailLink span') || {textContent: ''}).textContent.trim();
+
+    const parts = [];
+    if (name) parts.push(`Ism: ${name}`);
+    if (phone) parts.push(`Tel: ${phone}`);
+    if (telegram) parts.push(`Telegram: ${telegram}`);
+    if (instagram) parts.push(`Instagram: ${instagram}`);
+    if (email) parts.push(`E-mail: ${email}`);
+
+    const toCopy = parts.join('\n');
+
+    const ok = await copyToClipboard(toCopy);
+    if (ok) {
+      const original = document.getElementById('copyLabel').textContent;
+      document.getElementById('copyLabel').textContent = 'Nusxa olindi ✓';
+      setTimeout(()=> document.getElementById('copyLabel').textContent = original, 1600);
+    } else {
+      const message = `Bu qurilmada avtomatik nusxalash imkoniyati cheklangan. Iltimos, quyidagi matnni qo'lda nusxa oling:\n\n${toCopy}`;
+      try{
+        prompt(message, toCopy);
+      }catch(e){
+        alert(message);
+      }
+    }
+  });
+</script>
+</body>
+</html>
